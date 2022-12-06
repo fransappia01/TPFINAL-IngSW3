@@ -1,10 +1,10 @@
 module.exports = app => {
-    const toDo = require("../controllers/todo.controller.js");
+    const todo = require("../controllers/todo.controller.js");
   
     var router = require("express").Router();
   
     // Create a new Tutorial
-    router.post("/", toDo.create);
+    router.post("/", todo.create);
   
     // Retrieve all Tutorials
    // router.get("/", tutorials.findAll);

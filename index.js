@@ -1,18 +1,32 @@
-const express = require('express')
-const app = express()
-const port = 3000
+const express = require("express");
+const bodyParser = require("body-parser");
+const cors = require("cors");
+require('dotenv').config()
 
-app.get('/', (req, res) => {
-  res.send('Hello World!')
-})
+const app = express();
+
+var corsOptions = {
+  origin: "http://localhost:8081"
+};
+
+app.use(cors(corsOptions));
+
+// parse requests of content-type - application/json
+app.use(bodyParser.json());
+
+// parse requests of content-type - application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: true }));
 
 require("./routes/todo.routes")(app);
 
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
-})
+// set port, listen for requests
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}.`);
+});
 
 const db = require("./models");
+console.log(db.url)
 db.mongoose
   .connect(db.url, {
     useNewUrlParser: true,

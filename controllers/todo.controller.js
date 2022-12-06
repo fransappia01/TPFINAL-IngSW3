@@ -1,31 +1,31 @@
 const db = require("../models");
-const toDo = db.ToDo;
+const ToDo = db.todo;
 
 // Create and Save a new Tutorial
 exports.create = (req, res) => {
    // Validate request
    if (!req.body.title) {
-    res.status(400).send({ message: "Content can not be empty!" });
+    res.status(400).send({ message: "No puede estar vacio" });
     return;
   }
 
-  // Create a Tutorial
-  const toDo = new toDo({
+  // Crea tarea nueva
+  const todo = new ToDo({
     title: req.body.title,
-    body: req.body.description,
+    body: req.body.body
     
   });
 
-  // Save Tutorial in the database
-  tutorial
-    .save(tutorial)
+  // Guardar tarea en la db
+  todo
+    .save(todo)
     .then(data => {
       res.send(data);
     })
     .catch(err => {
       res.status(500).send({
         message:
-          err.message || "Some error occurred while creating the Tutorial."
+          err.message || "Error al crear la tarea"
       });
     });
 };

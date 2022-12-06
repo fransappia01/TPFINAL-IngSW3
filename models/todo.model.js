@@ -1,15 +1,14 @@
 module.exports = mongoose => {
-    const toDo = mongoose.model(
-      "toDo",
+    const ToDo = mongoose.model(
+      "ToDo",
       mongoose.Schema(
         {
           title: String,
           body: String,
-        
         },
         { timestamps: true }
       )
     );
   
-    return toDo;
+    return ToDo;
   };
