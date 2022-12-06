@@ -18,6 +18,9 @@
   },
   "homepage": "https://github.com/fransappia01/TPFINAL-IngSW3#readme",
   "dependencies": {
-    "express": "^4.18.2"
+    "body-parser": "^1.20.1",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "mongoose": "^6.8.0"
   }
 }
