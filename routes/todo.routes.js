@@ -3,11 +3,11 @@ module.exports = app => {
   
     var router = require("express").Router();
   
-    // Create a new Tutorial
+    // Create a new todo
     router.post("/", todo.create);
   
-    // Retrieve all Tutorials
-   // router.get("/", tutorials.findAll);
+    // Retrieve all todos
+   router.get("/", todo.findAll);
   
     // Retrieve all published Tutorials
    // router.get("/published", tutorials.findAllPublished);
