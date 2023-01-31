@@ -4,8 +4,7 @@ const ToDo = db.todo;
 // Create and Save a new Tutorial
 exports.create = (req, res) => {
   // Validate request
-  console.log(req.body);
-  if (!req.body.title) {
+  if (!req.body?.title) {
     res.status(400).send({ message: "No puede estar vacio" });
     return;
   }
@@ -14,13 +13,13 @@ exports.create = (req, res) => {
   const todo = new ToDo({
     title: req.body.title,
     body: req.body.body
-
   });
 
   // Guardar tarea en la db
   todo
     .save(todo)
     .then(data => {
+      console.log(data);
       res.send(data);
     })
     .catch(err => {
@@ -65,6 +64,21 @@ exports.delete = (req, res) => {
 
 // Delete all Tutorials from the database.
 exports.deleteAll = (req, res) => {
-
+  ToDo
+    .deleteMany({})
+    .then(data => {
+    res.send({
+      message: `${data.deletedCount} Eliminados correctamente`
+    });
+  })
+  .catch(err => {
+    res.status(500).send({
+      message:
+        err.message || "Ocurrio un error"
+    });
+  });
 };
+
+
+
 

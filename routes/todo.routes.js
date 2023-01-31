@@ -4,10 +4,13 @@ module.exports = app => {
     var router = require("express").Router();
   
     // Create a new todo
-    router.post("/", todo.create);
+   router.post("/", todo.create);
   
     // Retrieve all todos
    router.get("/", todo.findAll);
+
+   // Delete all todos
+   router.delete("/", todo.deleteAll);
   
     // Retrieve all published Tutorials
    // router.get("/published", tutorials.findAllPublished);
@@ -20,9 +23,6 @@ module.exports = app => {
   
     // Delete a Tutorial with id
     //router.delete("/:id", tutorials.delete);
-  
-    // Delete all Tutorials
-    //router.delete("/", tutorials.deleteAll);
   
     app.use('/api/todo', router);
   };
