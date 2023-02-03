@@ -1,5 +1,5 @@
 const request = require("supertest");
-const mongoose = require("mongoose")
+const mongoose = require("mongoose");
 const app = require("../app");
 
 const db = require("../models");
@@ -9,12 +9,11 @@ beforeEach((done) => {
     console.log(process.env.MONGO_URL)
     mongoose.connect(
         process.env.MONGO_URL,
-
-        { useNewUrlParser: true,
-            dbName: "ingsw3_db" 
+        {
+            useNewUrlParser: true,
+            dbName: "ingsw3_db"
         },
-        () => done()
-    )
+    ).then(() => done())
 })
 
 afterEach((done) => {
@@ -24,6 +23,7 @@ afterEach((done) => {
 })
 
 describe("API ENDPOINT TEST", () => {
+    
     test("/GET ALL TODO", (done) => {
       request(app)
         .get("/api/todo")
