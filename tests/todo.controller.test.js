@@ -2,11 +2,17 @@ const request = require("supertest");
 const mongoose = require("mongoose")
 const app = require("../app");
 
+const db = require("../models");
+const ToDo = db.todo;
+
 beforeEach((done) => {
+    console.log(process.env.MONGO_URL)
     mongoose.connect(
-        "mongodb://root:example@localhost:27017/",
+        process.env.MONGO_URL,
+
         { useNewUrlParser: true,
-            dbName: "ingsw3_db" },
+            dbName: "ingsw3_db" 
+        },
         () => done()
     )
 })
