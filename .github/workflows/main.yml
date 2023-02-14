@@ -21,13 +21,13 @@ jobs:
       - name: Install packages
         run: npm ci
 
-  build-and-push-docker-image:
-    name: Build Docker image and push to repositories
+  #build-and-push-docker-image:
+    #name: Build Docker image and push to repositories
     # run only when code is compiling and tests are passing
-    runs-on: ubuntu-latest
+    #runs-on: ubuntu-latest
 
     # steps to perform in job
-    steps:
+    #steps:
       - name: Checkout code
         uses: actions/checkout@v3
 
