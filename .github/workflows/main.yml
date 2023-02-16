@@ -31,7 +31,7 @@ jobs:
 
       - name: Run tests         #no andan los test unitarios
         env: # Or as an environment variable
-          .env
+          MONGO_URL: ${{ secrets.MONGO_URL }}
         run: npm test
 
       - name: Collect tests report
@@ -65,11 +65,9 @@ jobs:
           # build on feature branches, push only on master branch
           push: ${{ github.ref == 'refs/heads/master' }}
 
-  deploy:
-    name: Deploys app to railway
-    runs-on: ubuntu-latest
-
-    steps:
+      - name: Deploys app to railway
+        runs-on: ubuntu-latest
+        
       - name: Install Railway
         run: npm i -g @railway/cli
 
