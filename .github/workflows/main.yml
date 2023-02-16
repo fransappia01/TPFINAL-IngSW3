@@ -28,6 +28,12 @@ jobs:
 
     # steps to perform in job
     #steps:
+
+      - name: Run tests
+        env: # Or as an environment variable
+          MONGO_URL: ${{ secrets.MONGO_URL }}
+        run: npm test
+
       - name: Checkout code
         uses: actions/checkout@v3
 
