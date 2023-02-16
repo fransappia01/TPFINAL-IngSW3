@@ -31,7 +31,7 @@ jobs:
 
       - name: Run tests         #no andan los test unitarios
         env: # Or as an environment variable
-          MONGO_URL: ${{ secrets.MONGO_URL }}
+          .env
         run: npm test
 
       - name: Collect tests report
