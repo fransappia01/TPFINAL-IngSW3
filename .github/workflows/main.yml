@@ -33,6 +33,7 @@ jobs:
         env: # Or as an environment variable
           MONGO_URL: ${{ secrets.MONGO_URL }}
         run: npm test
+        console.log()
 
       - name: Collect tests report
         uses: actions/upload-artifact@v3
