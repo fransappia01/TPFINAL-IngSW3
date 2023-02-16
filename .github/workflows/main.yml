@@ -59,11 +59,10 @@ jobs:
           # build on feature branches, push only on master branch
           push: ${{ github.ref == 'refs/heads/master' }}
 
-  deploy:
-    name: Deploys app to railway
-    runs-on: ubuntu-latest
+      - name: Deploys app to railway
+        runs-on: ubuntu-latest
 
-    steps:
+    
       - name: Install Railway
         run: npm i -g @railway/cli
 
