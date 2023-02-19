@@ -7,9 +7,9 @@ const db = require("../models");
 const ToDo = db.todo;
 
 beforeEach((done) => {
-    console.log("mongodb://mongo:hZzYJ0b8sQk7u2C1ueDx@containers-us-west-145.railway.app:6183")
+    console.log(url)
     mongoose.connect(
-        "mongodb://mongo:hZzYJ0b8sQk7u2C1ueDx@containers-us-west-145.railway.app:6183",
+        url,
         {
             useNewUrlParser: true,
             dbName: "ingsw3_db"
