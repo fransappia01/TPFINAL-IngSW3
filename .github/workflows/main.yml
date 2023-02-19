@@ -29,11 +29,10 @@ jobs:
     # steps to perform in job
     #steps:
 
-      - name: Run tests         #no andan los test unitarios
-        run: npm test
+      - name: Run tests                   #no andan los test unitarios
         env: # Or as an environment variable
           MONGO_URL: ${{ secrets.MONGO_URL }}
-        
+        run: npm test
 
       - name: Collect tests report
         uses: actions/upload-artifact@v3

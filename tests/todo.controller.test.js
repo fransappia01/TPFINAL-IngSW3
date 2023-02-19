@@ -1,14 +1,15 @@
 const request = require("supertest");
 const mongoose = require("mongoose");
 const app = require("../app");
+const url = "mongodb://mongo:hZzYJ0b8sQk7u2C1ueDx@containers-us-west-145.railway.app:6183"
 
 const db = require("../models");
 const ToDo = db.todo;
 
 beforeEach((done) => {
-    console.log(process.env.MONGO_URL)
+    console.log("mongodb://mongo:hZzYJ0b8sQk7u2C1ueDx@containers-us-west-145.railway.app:6183")
     mongoose.connect(
-        process.env.MONGO_URL,
+        "mongodb://mongo:hZzYJ0b8sQk7u2C1ueDx@containers-us-west-145.railway.app:6183",
         {
             useNewUrlParser: true,
             dbName: "ingsw3_db"

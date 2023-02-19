@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="jest tests" tests="1" failures="0" errors="0" time="6.472">
+  <testsuite name="API ENDPOINT TEST" errors="0" failures="0" skipped="0" timestamp="2023-02-19T02:49:19" time="6.311" tests="1">
+    <testcase classname="API ENDPOINT TEST /GET ALL TODO" name="API ENDPOINT TEST /GET ALL TODO" time="2.674">
+    </testcase>
+  </testsuite>
+</testsuites>
