@@ -27,7 +27,7 @@ describe("API ENDPOINT TEST", () => {
     
     test("/GET ALL TODO", (done) => {
       request(app)
-        .get("/api/toddd")
+        .get("/api/todo")
         .expect("Content-Type", /json/)
         .expect(200)
         .end((err, res) => {
